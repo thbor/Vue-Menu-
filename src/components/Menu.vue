@@ -98,7 +98,9 @@ export default {
 }
 </script>
 <style>
-
+    el-menu{
+    background: blue
+    }
    
 
 </style>
