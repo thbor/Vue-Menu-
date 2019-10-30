@@ -63,6 +63,7 @@ export default {
               if(data.username===loginParams.username && data.passWord===loginParams.passWord){
                 this.logining = true;
                 this.$router.push({path:'/table'})
+                  console.log(1212,this.$router.history.current.path)
               }else{
                 this.logining = false;
                 console.log("账号或密码错误")
