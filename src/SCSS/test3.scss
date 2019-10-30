@@ -1,0 +1,85 @@
+
+//3.引用另外一个css里面的属性
+// @use 'all';
+
+// body{
+//     background: all.$primary-color;
+// }
+//4.混合用法
+// @mixin border-radius($radius) {
+//     -webkit-border-radius: $radius;
+//     -moz-border-radius: $radius;
+//     -ms-border-radius: $radius;
+//     border-radius: $radius;
+//     border: 1px solid ;
+//   }
+//   .box {
+//     @include border-radius(10px);
+//   }
+  //5.自定义
+//   $baseSize:12px;
+//   @function font($level:1){
+//         @return $baseSize*$level;
+//   }
+  
+//   .Title1{
+//     font-size: font(1);
+//     font-family: Roboto-Black;
+//   }
+//   .Title2{
+//     font-size: font(15);
+//     font-family: Roboto-Black;
+//   }
+  //6.继承
+//   .Button{
+//     display: inline-block;
+//     line-height: 1;
+//     white-space: nowrap;
+//     cursor: pointer;
+//     background: #fff;
+//     border: 1px solid #dcdfe6;
+//     color: #606266;
+//     -webkit-appearance: none;
+//     text-align: center;
+//     box-sizing: border-box;
+//     outline: none;
+//     margin: 0;
+//     transition: .1s;
+//     font-weight: 500;
+//     -moz-user-select: none;
+//     -webkit-user-select: none;
+//     -ms-user-select: none;
+//     padding: 12px 20px;
+//     font-size: 14px;
+//     border-radius: 4px;
+//   }
+//   .errorButton{
+//     @extend .Button;
+//     color: #fff;
+//     background-color: #f56c6c;
+//     border-color: #f56c6c;
+//   }
+//   .successButton{
+//     @extend .Button;
+//     background: #5daf34;
+//     border-color: #5daf34;
+//     color: #fff;
+//   }
+//div如下
+// <div>
+// <nav>
+// <ul>
+//     <li>1</li>
+//     <li>2</li>
+//     <li>3</li>
+// </ul>
+// </nav>
+// </div>
+// <div class="box">1212</div>
+// <div class="Title1">Title1</div>
+// <div class="Title2">Title2</div>
+// <button class="Button">Button</button><br>
+// <button class="successButton">successButton</button><br>
+// <button class="errorButton">errorButton</button>
+  
+  

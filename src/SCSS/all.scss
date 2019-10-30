@@ -1,0 +1,33 @@
+// 1.变量引用
+$primary-color:red;
+body{
+    background:$primary-color;
+    
+}
+//2.层次结构
+// nav ul{
+//     margin: 0;
+//     padding: 0;
+//     list-style: none;
+//     color: aquamarine
+// }
+// nav li{
+//     display: inline-block;  /*横着放置li */
+//     color: blue
+// }
+// 变成下面的结构
+// nav{
+//     ul{
+//         margin: 0;
+//         padding: 0;
+//         list-style: none;
+//         color: aquamarine
+//     }
+//     li{
+//         display: inline-block;  /*横着放置li */
+//             color: blue
+//     }
+// }
+//3.在另外一个scss中引用见test3
+
+
