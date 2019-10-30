@@ -5,6 +5,7 @@
             <el-col :span="5" class="leftMenu">
                 <div class="grid-content bg-purple">
                   <!-- 如果当前是login页面，则不显示导航栏 -->
+
                    <div v-if="this.$router.history.current.path !== '/login' && this.$router.history.current.path !== '/'"><Menu/></div>
                 </div>
             </el-col>
