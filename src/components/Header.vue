@@ -1,9 +1,15 @@
 <template>
-    <div>把发大V覆盖</div>
+    <div>
+        
+    </div>
 </template>
 <script>
 export default {
-    
+    data(){
+        return{
+
+        }
+    }
 }
 </script>
 <style>

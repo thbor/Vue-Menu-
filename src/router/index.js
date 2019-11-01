@@ -1,11 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../components/Login.vue'
-import Menu2 from '../components/Menu2.vue'
-import Table from '../components/Table.vue'
-import Count from '../components/Count.vue'
-import Home from '../components/nav/Home.vue'
-import Home12 from '../components/nav/Home12.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -21,28 +17,53 @@ const routes = [
   {
     path: '/table',
     name: 'Table',
-    component: Table
+    component: ()=>import("../components/Table.vue")
   },
   {
     path: '/count',
     name: 'Count',
-    component: Count
+    component: ()=>import("../components/Count.vue")
   },
   {
     path: '/home',
     name: 'Home',
-    component: Home
+    component: ()=>import("../components/nav/Home.vue")
   },
   {
     path: '/home12',
     name: 'Home12',
-    component: Home12
+    component: ()=>import("../components/nav/Home12.vue")
   },
 
   {
     path: '/menu2',
     name: 'Menu2',
-    component: Menu2
+    component: ()=>import("../components/Menu2.vue")
+  },
+  {
+    path: '/404',
+    name: 'Error404',
+    component: ()=>import("../components/Error404.vue")
+  },
+  {
+    path: '/echart',
+    name: 'Echart',
+    component: ()=>import("../components/Echart.vue")
+  },
+  {
+    path: '/form',
+    name: 'Form',
+    component: ()=>import("../components/Form.vue")
+  },
+  {
+    path: '/cascader',
+    name: 'Cascader',
+    component: ()=>import("../components/Cascader.vue")
+  },
+  {
+    path: '/tag',
+    name: 'Tag',
+    component: ()=>import("../components/Tag.vue")
   },
   
 ]
