@@ -19,7 +19,7 @@
         </el-submenu>
         1级菜单 end
     </el-menu> -->
-    <el-menu  :default-active="hrf">
+    <el-menu :default-active="hrf">
          <!--一级有子节点-->
         <template v-for="menu1 in menus">
             <el-submenu  :index="menu1.title" :key="menu1.id" v-if="menu1.child && menu1.child.length">
@@ -59,10 +59,12 @@
 <script>
 import {getMenuJson} from "../api/api"
 export default {
+    props:[],
     data(){
         return{
             menus:[],
             hrf:"",
+            sendMenu:[],
         }
     },
     computed: {
@@ -70,11 +72,18 @@ export default {
     },
     methods:{
         goPage(menu){
+            //生成tag标签
+            console.log(menu)              //json数据
+            console.log(JSON.stringify(menu))         //字符串
+            this.sendMenu.push(menu)
+            console.log(555555555555,this.sendMenu)
+            sessionStorage.setItem('menuTag', JSON.stringify(this.sendMenu))     
+            //跳转地址
             if(menu.href!=""){
-                 this.hrf = menu.href
+                this.hrf = menu.href
                 this.$router.push(menu.href)
-               
             }
+
         }
     },
     mounted(){

@@ -15,6 +15,13 @@
             </el-col>
             <el-col :span="18">
                 <div class="grid-content bg-purple-light">
+                  <div class="headerBorder">
+                    <div class="TagClass">
+                      左边放可关闭tag标签
+                      <Header />
+                    </div>
+                    <div class="UserClass">右边放用户信息</div>
+                  </div>
                     <!-- 右边内容 -->
                     <router-view/>
                 </div>
@@ -31,11 +38,14 @@
 <script>
 import Menu from './components/Menu'
 import Error404 from './components/Error404'
+import Header from './components/Header'
 // import Login from './components/Login'
 export default {
+    
     data(){
       return{
-        ifExistPath:false
+        ifExistPath:false,
+        // showClickTagCss:false
       }
     },
     created(){
@@ -55,8 +65,12 @@ export default {
     },
     components:{
       Menu,
-      Error404
+      Error404,
+      Header
       // Login
+    },
+    methods:{
+       
     }
     // watch:{
     //   $router(to,from){
@@ -71,24 +85,22 @@ html,body{
   width: 100%;
   height: 100%;
 }
-/* #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.headerBorder{
+  border: 1px solid red;
+  height: 30px;
+  width: 100%;
+}
+.TagClass{
+  float: left;
+  width: 70%;
+  height: 30px;
+  border:1px solid green;
+}
+.UserClass{
+  float: right;
+  width: 29%;
+  height: 30px;
+  border:1px solid blue;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-} */
 </style>
