@@ -1,40 +1,54 @@
 <template>
-    <div>
-        <el-tag id="elTag" v-for="tag in dynamicTags" :key="tag" closable @close="handleClose(tag)" @click="handleClick(tag)">{{tag}}</el-tag>
+ 
+<div>
+<el-tag v-for="tag in sendMenu" :key="tag.name" closable @close="handleClose(tag)" @click="clickTag(tag)" >
+  <!-- <span v-bind:class="{active1:tag.name==faceValue}">{{tag.name}}</span> -->
+  {{tag.name}}
+  
+</el-tag>
+                                                         
+
     </div>
 </template>
 <script>
 export default {
-    
+    props:['sendMenu'],
     data(){
         return{
-         dynamicTags:[],
-
+          clickClass:"",
+          isClick:false,
+          faceValue:''
         }
     },
     methods:{
-         handleClose(tag) {
-          this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
+        handleClose(tag){
+          console.log(787878,this.sendMenu)
+           this.sendMenu.splice(this.sendMenu.indexOf(tag), 1);
         },
-        handleClick(tag){
-          console.log("点击了"+tag);
-        //   var str = '1';
-        //   str += '<div>'+str+'</div>'
-        //   document.getElementById('elTag').innerHTML=str;
-          // this.showClickTagCss = true;
+        clickTag(tag){
+          console.log(111,tag)
+          //去重，避免当前页面重复点击
+          if(tag.href.indexOf(this.$router.history.current.path)==-1){
+            this.$router.push(tag.href);
+          }
+          this.faceValue = tag.name;
+          //点击标签也会打开左边的菜单栏
+           
         },
+     
+       
+    },
+    components:{
     },
     mounted(){
-         const test = JSON.parse(sessionStorage.getItem('menuTag'));
-         console.log(4343434,test[test.length-1].name)
-         this.dynamicTags.push(test[test.length-1].name);
-         console.log("=========")
-         console.log(this.dynamicTags)
-         console.log("=========")
-
     }
 }
+
 </script>
 <style>
-
+    
+    /* .active1{
+      color:  blue;
+          } */
+          
 </style>

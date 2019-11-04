@@ -128,7 +128,7 @@ export default {
             //1.数据验证
             //2.封装表单对象
             //3.数据更新表单
-            console.log("flagIndex==============="+this.flagIndex)
+            // console.log("flagIndex==============="+this.flagIndex)
             if(this.flagIndex==-1){
                 //新增
                  this.tableList.unshift(this.formInfo)
@@ -137,7 +137,7 @@ export default {
                 this.tableList.splice(this.flagIndex,1,this.formInfo)
                 
             }
-            console.log(1111,this.formInfo)
+            // console.log(1111,this.formInfo)
             this.dialogFormVisible = false
         },
         EditRow(index, rows){

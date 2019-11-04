@@ -13,14 +13,15 @@
                 <!-- 如果用户误输入其他路径，则跳转到404页面 -->
                 
             </el-col>
-            <el-col :span="18">
+            <el-col :span="19" class="rightClass" style="float: right;">
                 <div class="grid-content bg-purple-light">
                   <div class="headerBorder">
                     <div class="TagClass">
-                      左边放可关闭tag标签
-                      <Header />
+                      
+                      <!-- {{sendMenu}} -->
+                      <!-- <Header /> -->
                     </div>
-                    <div class="UserClass">右边放用户信息</div>
+                    <!-- <div class="UserClass">右边放用户信息</div> -->
                   </div>
                     <!-- 右边内容 -->
                     <router-view/>
@@ -38,10 +39,10 @@
 <script>
 import Menu from './components/Menu'
 import Error404 from './components/Error404'
-import Header from './components/Header'
+// import Header from './components/Header'
 // import Login from './components/Login'
 export default {
-    
+    props:['sendMenu'],
     data(){
       return{
         ifExistPath:false,
@@ -66,7 +67,7 @@ export default {
     components:{
       Menu,
       Error404,
-      Header
+      // Header
       // Login
     },
     methods:{
@@ -86,7 +87,7 @@ html,body{
   height: 100%;
 }
 .headerBorder{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 30px;
   width: 100%;
 }
@@ -94,13 +95,27 @@ html,body{
   float: left;
   width: 70%;
   height: 30px;
-  border:1px solid green;
+  /* border:1px solid green; */
 }
 .UserClass{
   float: right;
   width: 29%;
   height: 30px;
-  border:1px solid blue;
+  /* border:1px solid blue; */
 }
-
+.leftMenu{
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    /* outline: 1px solid; */
+    /* background:  #334556; */
+}
+.rightClass{
+  /* border: 1px solid red; */
+  padding: 10px;
+  margin: 5px
+}
+.grid-content .bg-purple-light{
+  /* border: 1px solid green */
+}
 </style>

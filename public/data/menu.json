@@ -5,7 +5,6 @@
     {"id":"3","parentId":"1","title":"/table","href":"/table","icon":"el-icon-camera","name":"table"},
     {"id":"4","parentId":"1","title":"/echart","href":"/echart","icon":"el-icon-s-cooperation","name":"echart"},
     {"id":"5","parentId":"2","title":"/home12","href":"/home12","icon":"el-icon-s-platform","name":"home12"},
-    {"id":"6","parentId":"1","title":"/form","href":"/form","icon":"el-icon-camera","name":"Form"},
     {"id":"7","parentId":"2","title":"Home2_2","href":"/home","icon":"el-icon-camera","name":"Home2_2"},
     {"id":"8","parentId":"1","title":"/cascader","href":"/cascader","icon":"el-icon-camera","name":"Cascader级联"},
     {"id":"9","parentId":"1","title":"/tag","href":"/tag","icon":"el-icon-camera","name":"Tag标签"},

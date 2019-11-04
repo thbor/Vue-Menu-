@@ -19,7 +19,10 @@
         </el-submenu>
         1级菜单 end
     </el-menu> -->
-    <el-menu :default-active="hrf">
+    <div>
+        <el-row>
+            <!-- <el-col :span="5"> -->
+                <el-menu :default-active="hrf">
          <!--一级有子节点-->
         <template v-for="menu1 in menus">
             <el-submenu  :index="menu1.title" :key="menu1.id" v-if="menu1.child && menu1.child.length">
@@ -54,12 +57,26 @@
         </div>
          <!--无子节点的一级菜单 end-->
         </template>
+        
     </el-menu>
+
+            <!-- </el-col> -->
+            <!-- <el-col :span="18"> -->
+                 <div class="HeaderClass">
+                    <Header :sendMenu="this.sendMenu"/>
+                    
+                </div>
+            <!-- </el-col> -->
+        </el-row>
+    </div>
+    
+    
 </template>
 <script>
 import {getMenuJson} from "../api/api"
+import Header from '../components/Header'
 export default {
-    props:[],
+    
     data(){
         return{
             menus:[],
@@ -72,14 +89,22 @@ export default {
     },
     methods:{
         goPage(menu){
+            let menuIndex = this.sendMenu.indexOf(menu)
             //生成tag标签
-            console.log(menu)              //json数据
-            console.log(JSON.stringify(menu))         //字符串
-            this.sendMenu.push(menu)
-            console.log(555555555555,this.sendMenu)
-            sessionStorage.setItem('menuTag', JSON.stringify(this.sendMenu))     
+               
+                    if(menuIndex!==-1){
+                        this.sendMenu.splice(menuIndex,1);
+                    }
+                    if(this.sendMenu.length>5){
+                         this.sendMenu.splice(0,1);
+                    }
+                    this.sendMenu.unshift(menu);
+               
+               
+                
+            // localStorage.setItem('menuTag', JSON.stringify(this.sendMenu))    
             //跳转地址
-            if(menu.href!=""){
+            if(menu.href!="" && menu.href.indexOf(this.$router.history.current.path)==-1){
                 this.hrf = menu.href
                 this.$router.push(menu.href)
             }
@@ -87,17 +112,14 @@ export default {
         }
     },
     mounted(){
-    //   console.log(1,this.$router.history.current.path)  
       this.hrf = this.$router.history.current.path
         getMenuJson().then(res=>{
-                // console.log(res.data);
                 const resData = res.data;
                  var topMenu=[];
                   //menuArr为data的子节点的集合
                 for(var i=0;i<resData.length;i++){
                     if(resData[i].parentId == "null"){
                         topMenu.push(resData[i]);
-                        // console.log(topMenu)
                     }
                     var menuArr = [];
                    
@@ -112,12 +134,14 @@ export default {
                    
                 }
                 //topMenu为一级菜单
-                //  console.log(111,topMenu)
                  this.menus = topMenu;
                 // return topMenu;
         }).catch(error=>{
             window.console.log(error)
         });
+    },
+    components:{
+        Header
     }
 }
 </script>
@@ -125,4 +149,27 @@ export default {
 /* .el-menu-item.is-active {
    background-color: rgb(31, 61, 97) !important;
 } */
+.HeaderClass{
+    position: absolute;
+    left: 100%;
+    bottom: 0%;
+    width: 1000px;
+    height: 100%;
+    
+}
+ .el-tag + .el-tag {
+    margin-left: 10px;
+  }
+  .el-menu {
+    background-color: #334556 !important;
+}
+.el-submenu__title {
+    
+    color: white !important; 
+ 
+}
+.el-menu-item {
+    color:  white !important;
+   
+}
 </style>
