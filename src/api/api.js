@@ -8,6 +8,7 @@ export const requestLogin = params=>{return axios.post(`${base}/login`,params).t
 
 export const getMenuJson = ()=>{return axios.get(ip+"data/menu.json")}
 export const getTableJson = ()=>{return axios.get(ip+"data/table.json")}
+
 // export function getdata1(empt,name){
 //     axios.get(ip + "/login",{
 //         params:{

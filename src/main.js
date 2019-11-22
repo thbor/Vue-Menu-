@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'
 import ElementUI from 'element-ui'
 import store from './vuex/store'
-import 'element-ui/lib/theme-chalk/index.css';
 import '../css/test2.css'
 import echarts from "echarts";
 Vue.prototype.$echarts = echarts;

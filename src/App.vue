@@ -1,8 +1,13 @@
 
 <template>
 <!-- TODO  这里还需要一个404页面，-->
-  <div id="app" v-if="ifExistPath">
+  <!-- <el-scrollbar wrap-class="list" wrap-style="color: red;" view-style="font-weight: bold;" view-class="view-box" :native="false">
+   
+    </el-scrollbar> -->
     
+  <div id="app" v-if="ifExistPath" >
+   
+  
         <el-row >
             <el-col :span="5" class="leftMenu">
               <!-- ifExistPath：如果有该路径的页面 -->
@@ -85,6 +90,7 @@ html,body{
   margin: 0px;
   width: 100%;
   height: 100%;
+
 }
 .headerBorder{
   /* border: 1px solid red; */
@@ -108,14 +114,19 @@ html,body{
     height: 100%;
     position: fixed;
     /* outline: 1px solid; */
-    /* background:  #334556; */
+    background:  #334556;
+    /* overflow-x:hidden; */
+    /* overflow: scroll; */
 }
 .rightClass{
   /* border: 1px solid red; */
   padding: 10px;
-  margin: 5px
+  margin: 5px;
+  /* position: fixed; */
+  left: 21%
 }
 .grid-content .bg-purple-light{
   /* border: 1px solid green */
 }
+
 </style>

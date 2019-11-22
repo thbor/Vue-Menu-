@@ -1,6 +1,7 @@
 <template>
 
     <div class="tableBorder">
+        
         <el-input v-model="input" placeholder="请输入内容" style="width:300px"></el-input>
         &nbsp;
         <el-button type="primary" icon="el-icon-search" @click="find">搜索</el-button>
@@ -43,13 +44,13 @@
 <!--分页-->
          <div :class="{hiddenPage:ifHiddenPage}">
             <span class="demonstration"></span>
-            <el-pagination 
-            layout="prev, pager, next" 
+            <el-pagination
+            layout="prev, pager, next"
             background
             @size-change="hanleSizeChange"
-            @current-change="handleCurrentChange" 
-            :page-size="pageSize" 
-            :total="total" 
+            @current-change="handleCurrentChange"
+            :page-size="pageSize"
+            :total="total"
             style="float:right">
             </el-pagination>
         </div>

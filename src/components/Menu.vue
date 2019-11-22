@@ -164,12 +164,27 @@ export default {
     background-color: #334556 !important;
 }
 .el-submenu__title {
-    
     color: white !important; 
  
 }
 .el-menu-item {
     color:  white !important;
+
    
 }
+/* 菜单激活css */
+.el-menu-item.is-active {
+   background-color: #495d71 !important;
+}
+.el-menu-item:focus,.el-menu-item:hover {
+    outline: 0 !important;
+    background:  #495d71 !important;
+}
+/* 鼠标悬浮时，主菜单的样式 */
+.el-submenu__title:focus, .el-submenu__title:hover{
+    outline: 0 !important;
+    background:  #495d71 !important;
+}
+
+
 </style>

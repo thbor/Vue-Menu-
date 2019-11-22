@@ -61,10 +61,15 @@ const routes = [
     component: ()=>import("../components/Cascader.vue")
   },
   {
+    path: '/echart2',
+    name: 'Echart2',
+    component: ()=>import("../components/Echart2.vue")
+  },
+  {
     path: '/tag',
     name: 'Tag',
     component: ()=>import("../components/Tag.vue")
-  },
+  }
   
 ]
 
