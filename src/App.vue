@@ -5,45 +5,12 @@
    
     </el-scrollbar> -->
     
-  <div id="app" v-if="ifExistPath" >
-   
-  
-        <el-row >
-            <el-col :span="5" class="leftMenu">
-              <!-- ifExistPath：如果有该路径的页面 -->
-                <div class="grid-content bg-purple" >
-                  <!-- 如果当前是login页面，则不显示导航栏 -->
-                   <div v-if="this.$router.history.current.path !== '/login' && this.$router.history.current.path !== '/'"><Menu/></div>
-                </div>
-                <!-- 如果用户误输入其他路径，则跳转到404页面 -->
-                
-            </el-col>
-            <el-col :span="19" class="rightClass" style="float: right;">
-                <div class="grid-content bg-purple-light">
-                  <div class="headerBorder">
-                    <div class="TagClass">
-                      
-                      <!-- {{sendMenu}} -->
-                      <!-- <Header /> -->
-                    </div>
-                    <!-- <div class="UserClass">右边放用户信息</div> -->
-                  </div>
-                    <!-- 右边内容 -->
+
                     <router-view/>
-                </div>
-            </el-col>
-        </el-row>
-       <!-- <router-link to="/home">3</router-link><br>
-      <router-link to="/menu">4</router-link> -->
-    </div>
-    <div v-else style="height:100%">
-      <Error404/>
-    </div>
+
   
 </template>
 <script>
-import Menu from './components/Menu'
-import Error404 from './components/Error404'
 // import Header from './components/Header'
 // import Login from './components/Login'
 export default {
@@ -70,8 +37,6 @@ export default {
       // console.log(this.ifExistPath)
     },
     components:{
-      Menu,
-      Error404,
       // Header
       // Login
     },

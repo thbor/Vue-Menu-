@@ -69,6 +69,11 @@ const routes = [
     path: '/tag',
     name: 'Tag',
     component: ()=>import("../components/Tag.vue")
+  },
+  {
+    path: '/Game',
+    name: 'Game',
+    component: ()=>import("../components/Game.vue")
   }
   
 ]
